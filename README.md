@@ -1,26 +1,44 @@
 # logtailSample
 
-HowTo reproduce (logtail issue?):
+This sample is used as HowTo reproduce logtail behaviors.
 
-1) setup your logtail secret:
+## Setup (one time only)
+
+Setup your logtail secret:
 
 ```bash
 export CH_LOGTAIL_SOURCE=blahblahblah
 ```
 
-2) try classic usage
+## Normal use
+
+Try classic usage
 
 ```bash
 node index.js
 ```
 
-This works! you could see the resulte in your https://logtail.com/ `Live tail` :
+This works! you could see the result in your https://logtail.com/ `Live tail` :
 ![img.png](img.png)
 
-3) now same test with mocha with `@logtail/node` or `@logtail/js` : this doesnt work
+## Mocha use case
+
+To do a test with mocha test framework with `@logtail/node` or `@logtail/js` : this doesn't work.
 
 ```bash
 npm run test
 ```
 
-I expect 2 `Live tail` additional entries.
+I expect 2 `Live tail` additional entries but got none.
+
+
+## Circular reference use case
+
+To do a test with circular reference as context object
+
+```bash
+node tests/logtailNode_MaxStackIssue.js
+```
+
+- A first entry is well sent with a simple json object.
+- A Second entry produces `RangeError: Maximum call stack size exceeded` issue: log is NOT sent.

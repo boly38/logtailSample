@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --exit --timeout 180000 --unhandled-rejections=strict tests/*.js"
+    "test": "mocha --exit --timeout 180000 --unhandled-rejections=strict tests/*.js",
+    "latest": "npm outdated --depth=3"
   },
   "type": "module",
   "author": "boly38@gmail.com",
