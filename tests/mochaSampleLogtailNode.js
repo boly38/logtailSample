@@ -16,9 +16,9 @@ describe("@logtail/node + Mocha", function() {
       }
     });
 
-    it("should work", function() {
+    it("should work", async function() {
         const logtail = new Logtail(logtailSource);
-        logtail.info("Logtail @logtail/node tested " + new Date());
+        await logtail.info("Logtail @logtail/node tested " + new Date());
     });
 
 });
