@@ -34,7 +34,7 @@ npm run test
 
 ## Circular reference use case
 
-To do a test with circular reference as context object
+To do a test with circular reference as context object ([issue #19](https://github.com/logtail/logtail-js/issues/19))
 
 ```bash
 node tests/logtailNode_MaxStackIssue.js
